@@ -29,6 +29,10 @@ def root():
 
 @app.route('/save-record', methods=['POST'])
 def save_record():
+    """
+    saves recorded command in WAV format
+    returns success if routine runs fine
+    """
     global STATE
     # check if the post request has the file part
     if 'file' not in request.files:
@@ -57,12 +61,15 @@ def save_record():
     else:
         STATE = "OFF"
     print(STATE)
-    
-    # song = AudioSegment.from_mp3(os.path.join(app.config['UPLOAD_FOLDER'], "audiofile.wav"))
-    # recognize()
     return '<h1>Success</h1>'
 
 def recognize():
+    """
+    recognizes the text in the recorded command using:
+    ffmpeg converter
+    speech_recoginition api
+    updates the state of the load
+    """
     global STATE
     r = sr.Recognizer()
     song = AudioSegment.from_mp3(os.path.join(app.config['UPLOAD_FOLDER'], "audiofile" + ".mp3"))
@@ -79,6 +86,10 @@ def recognize():
 
 @app.route("/device", methods = ["POST", "GET"])
 def device():
+    """
+    module is an endpoint for request on device state
+    returns a json object on pins to update
+    """
     global STATE
     if STATE == "OFF":
         return jsonify({"23" : "0", "1" : "0", "21": "0", "18": "0"})

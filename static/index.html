@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>A Simple Speech-recognition Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <style>
         .text_asname {
@@ -32,17 +34,34 @@
           }
     </style>
 </head>
-<body>
-    <div class="text_asname">
-        <p>
-            A Simple Speech-recognition Platform
-        </p>
-    </div>
-    <div class="button1">
-        <button id="startRecording">Record command</button>
-    </div>
-    <div class="button2">
-        <button id="stopRecording" disabled>Stop recording</button>
+<body >
+    <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Home</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Info</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Support</button>
+        </li>
+      </ul>
+    <div class="container text-center">
+        <div style="margin-top:200px;" class="row g-2">
+            <div class="col">
+            <p class="h1">
+                A Simple Speech-recognition Platform
+            </p>
+            </div>
+        </div>
+        <div  style="margin-top:200px;" class="row">
+            <div class="col">
+                <div class="p-2"><button class="btn btn-primary" id="startRecording">Record command</button></div>
+            </div>
+            <div class="col">
+                <div class="p-2"><button class="btn btn-primary" id="stopRecording" disabled>Stop recording</button></div>
+            </div>
+        </div>
     </div>
 </body>
 <script>
